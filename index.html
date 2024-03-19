@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Teklifi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Benimle date'e çıkar mısın ?</h1>
+        <div class="image-container">
+            <img src="mcqueen.jpg" alt="Şimşek Mcqueen">
+        </div>
+        <div class="buttons">
+            <button class="no" onclick="noButton()">Hayır</button>
+            <button class="yes" onclick="yesButton()">Evet</button>
+        </div>
+    </div>
+
+    <script>
+        let noCount = 0;
+        function noButton() {
+            const noMessages = ["Niye hayır diyonnn", "Kırma beni he de be gülüm", "Kızmaya başlıyorum", "Bak lojmanı basıp aşkımmmm diye bağırırım", "Maçoyum diyorum arızayım diyorum", "Nolur desem ?", "Biricik karım desem de mi hayır?", "Bak bi daha evine bırakmam!! (grçek)", "Hayırına hayırdır", "Hayırsa bi tabak da bize ayır", "Benden mi gocunuon be gel be özlemişsindir sen beni", "Tm artık evete bas selenim (daha prolaşamadık)"];
+            document.querySelector('h1').innerText = noMessages[noCount % noMessages.length];
+            noCount++;
+            document.querySelector('.buttons .yes').style.width = `${120 + noCount * 10}px`;
+            document.querySelector('.buttons .no').style.width = `${120 - noCount * 5}px`;
+        }
+
+        function yesButton() {
+            document.querySelector('h1').innerText = "KAÇOVVVV :) :)";
+            document.querySelector('.image-container').innerHTML = '<img src="sally.jpg" alt="Sally">';
+            document.querySelector('.buttons').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
